@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hotel booking Prediction</title>
+</head>
+<body>
+	<h3>Hotel Booking Prediction Form</h3>
+<div>
+	<form action="/predict" method="POST">
+		<label for="hotel">Hotel</label>
+		<select id="hotel" name="hotel">
+			<option value="0">City Hotel</option>
+			<option value="1">Resort Hotel</option>
+		</select>
+		<br>
+		<label for="lead_time">Lead Time</label>
+		<input type="text" id="lead_time" name="lead_time">
+		<br>
+		<label for="month">Arrival Month</label>
+		<select id="month" name="month">
+			<option value="1">January</option>
+			<option value="2">February</option>
+			<option value="3">March</option>
+			<option value="4">April</option>
+			<option value="5">May</option>
+			<option value="6">June</option>
+			<option value="7">July</option>
+			<option value="8">August</option>
+			<option value="9">September</option>
+			<option value="10">October</option>
+			<option value="11">November</option>
+			<option value="12">December</option>
+		</select>
+		<br>
+		<label for="stays_in_weekend_night">Stays in weekend nights</label>
+		<input type="text" id="stays_in_weekend_night" name="stays_in_weekend_night">
+		<br>
+		<label for="stays_in_week_nights">Stays in week nights</label>
+		<input type="text" id="stays_in_week_nights" name="stays_in_week_nights">
+		<br>
+		<label for="adults">Adults</label>
+		<input type="text" id="adults" name="adults">
+		<br>
+		<label for="children">Children</label>
+		<input type="text" id="children" name="children">
+		<br>
+		<label for="babies">Babies</label>
+		<input type="text" id="babies" name="babies">
+		<br>
+		<label for="meal">Meal Type</label>
+		<select id="meal" name="meal">
+			<option value="0">BB</option>
+			<option value="1">FB</option>
+			<option value="2">HB</option>
+			<option value="3">SC</option>
+			<option value="4">Undefined</option>
+		</select>
+		<br>
+		<label for="market_segment">Market Segment</label>
+		<select id="market_segment" name="market_segment">
+			<option value="0">Aviation</option>
+			<option value="1">Complementary</option>
+			<option value="2">Corporate</option>
+			<option value="3">Direct</option>
+			<option value="4">Groups</option>
+			<option value="5">Offline TA/TO</option>
+			<option value="6">Online TA</option>
+			<option value="7">Undefined</option>
+		</select>
+		<br>
+		<label for="distribution_channel">Distribution Channel</label>
+		<select id="distribution_channel" name="distribution_channel">
+			<option value="0">Corporate</option>
+			<option value="1">Direct</option>
+			<option value="2">GDS</option>
+			<option value="3">TA/TO</option>
+			<option value="4">Undefined</option>
+		</select>
+		<br>
+		<label for="deposit_type">Deposit Type</label>
+		<select id="deposit_type" name="deposit_type">
+			<option value="0">No Deposit</option>
+			<option value="1">Non Refund</option>
+			<option value="2">Refundable</option>
+		</select>
+		<br>
+		<label for="customer_type">Customer Type</label>
+		<select id="customer_type" name="customer_type">
+			<option value="0">Contract</option>
+			<option value="1">Group</option>
+			<option value="2">Transient</option>
+			<option value="3">Transient-Party</option>
+		</select>
+		<br>
+		<label for="repeated_guest">Is Repeated Guest</label>
+		<select id="repeated_guest" name="repeated_guest">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</select>
+		<br>
+		<label for="adr">Average Daily Rate</label>
+		<input type="text" id="adr" name="adr">
+		<br>
+		<label for="car_parking">Required Car Parking Spaces</label>
+		<input type="text" id="car_parking" name="car_parking">
+		<br>
+		<label for="special_requests">Total Of Special Requests</label>
+		<input type="text" id="special_requests" name="special_requests">
+		<br>
+		<label for="diff_room_assigned">Different Room Assigned</label>
+		<select id="diff_room_assigned" name="diff_room_assigned">
+			<option value="1">Yes</option>
+			<option value="0">NO</option>
+		</select>
+		<br>
+		<label for="no_of_booking_changes">Number of Booking Changes</label>
+		<input type="text" id="no_of_booking_changes" name="no_of_booking_changes">
+		<br>
+		<label for="days_in_waiting_list">Days in waiting List</label>
+		<input type="text" id="days_in_waiting_list" name="days_in_waiting_list">
+		<br>
+		<input type="submit" value="Submit">
+	</form>
+	<br><br><h3>{{ prediction }}<h3>
+</div>
+</body>
+</html>

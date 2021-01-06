@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Booking Cancellation Prediction</title>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="title">
+      Hotel Booking Cancellation Prediction
+    </div>
+    <form action="/predict" method="POST">
+      <div class="form">
+         <div class="inputfield">
+            <label for="lead_time">Lead Time</label>
+            <input type="text" id="lead_time" name="lead_time" class="input">
+         </div>
+         <div class="inputfield">
+            <label for="stays_in_weekend_night">Stays in weekend nights</label>
+            <input type="text" id="stays_in_weekend_night" name="stays_in_weekend_night" class="input">
+         </div>
+         <div class="inputfield">
+            <label for="stays_in_week_nights">Stays in week nights</label>
+            <input type="text" id="stays_in_week_nights" name="stays_in_week_nights" class="input">
+         </div>
+         <div class="inputfield">
+            <label for="adults">Adults</label>
+            <input type="text" id="adults" name="adults" class="input">
+         </div>
+         <div class="inputfield">
+            <label for="children">Children</label>
+            <input type="text" id="children" name="children" class="input">
+         </div>
+         <div class="inputfield">
+            <label for="babies">Babies</label>
+            <input type="text" id="babies" name="babies" class="input">
+         </div>
+         <div class="inputfield">
+            <label for="adr">Average Daily Rate</label>
+            <input type="text" id="adr" name="adr" class="input">
+         </div>
+         <div class="inputfield">
+            <label for="car_parking">Required Car Parking Spaces</label>
+            <input type="text" id="car_parking" name="car_parking" class="input">
+         </div>
+         <div class="inputfield">
+            <label for="special_requests">Total Of Special Requests</label>
+            <input type="text" id="special_requests" name="special_requests" class="input">
+         </div>
+         <div class="inputfield">
+            <label for="no_of_booking_changes">Number of Booking Changes</label>
+            <input type="text" id="no_of_booking_changes" name="no_of_booking_changes" class="input">
+         </div>
+         <div class="inputfield">
+            <label for="days_in_waiting_list">Days in waiting List</label>
+            <input type="text" id="days_in_waiting_list" name="days_in_waiting_list" class="input">
+         </div>
+         <div class="inputfield">
+            <label for="hotel">Hotel Type</label>
+            <div class="custom_select">
+              <select id="hotel" name="hotel">
+                <option value="">Select</option>
+                <option value="0">City Hotel</option>
+                <option value="1">Resort Hotel</option>
+              </select>
+            </div>
+         </div>
+         <div class="inputfield">
+            <label for="month">Arrival Month</label>
+            <div class="custom_select">
+              <select id="month" name="month">
+                <option value="">Select</option>
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+              </select>
+            </div>
+         </div>
+         <div class="inputfield">
+            <label for="meal">Meal</label>
+            <div class="custom_select">
+              <select id="meal" name="meal">
+                <option value="">Select</option>
+                <option value="0">BB</option>
+                <option value="1">FB</option>
+                <option value="2">HB</option>
+                <option value="3">SC</option>
+                <option value="4">Undefined</option>
+              </select>
+            </div>
+         </div>
+         <div class="inputfield">
+            <label for="market_segment">Market Segment</label>
+            <div class="custom_select">
+              <select id="market_segment" name="market_segment">
+                <option value="">Select</option>
+                <option value="0">Aviation</option>
+                <option value="1">Complementary</option>
+                <option value="2">Corporate</option>
+                <option value="3">Direct</option>
+                <option value="4">Groups</option>
+                <option value="5">Offline TA/TO</option>
+                <option value="6">Online TA</option>
+                <option value="7">Undefined</option>
+              </select>
+            </div>
+         </div>
+         <div class="inputfield">
+            <label for="distribution_channel">Distribution Channel</label>
+            <div class="custom_select">
+              <select id="distribution_channel" name="distribution_channel">
+                <option value="">Select</option>
+                <option value="0">Corporate</option>
+                <option value="1">Direct</option>
+                <option value="2">GDS</option>
+                <option value="3">TA/TO</option>
+                <option value="4">Undefined</option>
+              </select>
+            </div>
+         </div>
+         <div class="inputfield">
+            <label for="deposit_type">Deposit Type</label>
+            <div class="custom_select">
+              <select id="deposit_type" name="deposit_type">
+                <option value="">Select</option>
+                <option value="0">No Deposit</option>
+                <option value="1">Non Refund</option>
+                <option value="2">Refundable</option>
+              </select>
+            </div>
+         </div>
+         <div class="inputfield">
+            <label for="customer_type">Customer Type</label>
+            <div class="custom_select">
+              <select id="customer_type" name="customer_type">
+                <option value="">Select</option>
+                <option value="0">Contract</option>
+                <option value="1">Group</option>
+                <option value="2">Transient</option>
+                <option value="3">Transient-Party</option>
+              </select>
+            </div>
+         </div>
+         <div class="inputfield">
+            <label for="repeated_guest">Is Repeated Guest</label>
+            <div class="custom_select">
+              <select id="repeated_guest" name="repeated_guest">
+                <option value="">Select</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+         </div>
+         <div class="inputfield">
+            <label for="diff_room_assigned">Different Room Assigned</label>
+            <div class="custom_select">
+              <select id="diff_room_assigned" name="diff_room_assigned">
+                <option value="">Select</option>
+                <option value="1">Yes</option>
+                <option value="0">NO</option>
+              </select>
+            </div>
+         </div> 
+        <div class="inputfield">
+          <input type="submit" value="Submit" class="btn">
+        </div>
+      </form>
+      <br><br><h3>{{ prediction }}<h3>
+    </div>
+</div>
+<style>
+
+  *{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+  }
+  body{
+    background:#008080;
+    padding: 0 10px;
+  }
+  .wrapper{
+    max-width: 800px;
+    width: 100%;
+    background: #fff;
+    margin: 20px auto;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.125);
+    padding: 30px;
+  }
+
+  .wrapper .title{
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #008080;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .wrapper .form{
+    width: 100%;
+  }
+
+  .wrapper .form .inputfield{
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+  }
+
+  .wrapper .form .inputfield label{
+    width: 200px;
+    color: #757575;
+    margin-right: 10px;
+    font-size: 14px;
+  }
+
+  .wrapper .form .inputfield .input,
+  .wrapper .form .inputfield .textarea{
+    width: 100%;
+    outline: none;
+    border: 1px solid #d5dbd9;
+    font-size: 15px;
+    padding: 8px 10px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+  }
+
+  .wrapper .form .inputfield .textarea{
+    width: 100%;
+    height: 125px;
+    resize: none;
+  }
+
+  .wrapper .form .inputfield .custom_select{
+    position: relative;
+    width: 100%;
+    height: 37px;
+  }
+
+  .wrapper .form .inputfield .custom_select:before{
+    content: "";
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    border: 8px solid;
+    border-color: #d5dbd9 transparent transparent transparent;
+    pointer-events: none;
+  }
+
+  .wrapper .form .inputfield .custom_select select{
+    -webkit-appearance: none;
+    -moz-appearance:   none;
+    appearance:        none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    border: 0px;
+    padding: 8px 10px;
+    font-size: 15px;
+    border: 1px solid #d5dbd9;
+    border-radius: 3px;
+  }
+
+
+  .wrapper .form .inputfield .input:focus,
+  .wrapper .form .inputfield .textarea:focus,
+  .wrapper .form .inputfield .custom_select select:focus{
+    border: 1px solid #008080;
+  }
+
+  .wrapper .form .inputfield p{
+    font-size: 14px;
+    color: #757575;
+  }
+  .wrapper .form .inputfield .check{
+    width: 15px;
+    height: 15px;
+    position: relative;
+    display: block;
+    cursor: pointer;
+  }
+  .wrapper .form .inputfield .check input[type="checkbox"]{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+  .wrapper .form .inputfield .check .checkmark{
+    width: 15px;
+    height: 15px;
+    border: 1px solid #008080;
+    display: block;
+    position: relative;
+  }
+  .wrapper .form .inputfield .check .checkmark:before{
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: 2px;
+    width: 5px;
+    height: 2px;
+    border: 2px solid;
+    border-color: transparent transparent #fff #fff;
+    transform: rotate(-45deg);
+    display: none;
+  }
+  .wrapper .form .inputfield .check input[type="checkbox"]:checked ~ .checkmark{
+    background: #008080;
+  }
+
+  .wrapper .form .inputfield .check input[type="checkbox"]:checked ~ .checkmark:before{
+    display: block;
+  }
+
+  .wrapper .form .inputfield .btn{
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 15px; 
+    border: 0px;
+    background:  #008080;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 3px;
+    outline: none;
+  }
+
+  .wrapper .form .inputfield .btn:hover{
+    background: #58ffde;
+  }
+
+  .wrapper .form .inputfield:last-child{
+    margin-bottom: 0;
+  }
+
+  @media (max-width:420px) {
+    .wrapper .form .inputfield{
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .wrapper .form .inputfield label{
+      margin-bottom: 5px;
+    }
+    .wrapper .form .inputfield.terms{
+      flex-direction: row;
+    }
+  }
+  
+</style>
+	
+</body>
+</html>
