@@ -17,6 +17,9 @@ def home():
 
 @app.route("/predict",methods=["GET","POST"])
 def predict():
+    with_family_or_else=0
+    booking_changes=0
+    days_in_waiting=0
     if request.method=="POST":
         hotel=request.form["hotel"]
         lead_time=int(request.form["lead_time"])
